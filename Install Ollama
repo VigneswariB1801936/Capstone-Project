@@ -1,0 +1,9 @@
+A multi-agent safety system built using local LLMs via Ollama.
+
+1️⃣ Install Node.js
+
+https://nodejs.org/
+
+2️⃣ Install Ollama
+
+https://ollama.com/download
