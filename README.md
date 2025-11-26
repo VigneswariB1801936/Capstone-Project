@@ -19,31 +19,7 @@ Solution Statement: Agent Safeguard solves the moderation challenge using specia
 - Fake Media Agent: flags content that references AI-generated or manipulated media.
 
 The output from all agents is merged by a central SafetyAgent, which produces the final classification:
-SAFE or UNSAFE, with clear explanations.
-
-Architecture: 
-Below is a high-level overview of the data flow:
-         ┌───────────────────┐
-         │   User Content    │
-         └─────────┬─────────┘
-                   │
-         ┌─────────┼─────────┐
-         │         │         │
- ┌──────────┐ ┌──────────┐ ┌──────────────┐
- │ Toxicity │ │ Misinfor │ │ Fake Media   │
- │  Agent   │ │ mation   │ │   Agent      │
- └────┬─────┘ └────┬─────┘ └──────┬───────┘
-      │            │              │
-      └────────────┴──────┬───────┘
-                           │
-                 ┌─────────▼─────────┐
-                 │    SafetyAgent    │
-                 └─────────┬─────────┘
-                           │
-                 ┌─────────▼─────────┐
-                 │  SAFE / UNSAFE    │
-                 └────────────────────┘
-Each agent runs locally using Ollama, communicating via structured JSON to ensure consistency and parse ability.
+SAFE or UNSAFE, with clear explanations. Each agent runs locally using Ollama, communicating via structured JSON to ensure consistency and parse ability.
 
 1. ToxicityAgent – Cyberbullying Specialist: The ToxicityAgent evaluates content for:
 - Insults
